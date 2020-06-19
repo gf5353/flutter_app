@@ -2,6 +2,9 @@
 
 A new Flutter application.
 
+[![image](https://gitee.com/daodao/repository/raw/master/apk/flutter_app/qr.png)](https://gitee.com/daodao/repository/raw/master/apk/flutter_app/app-release.apk
+)
+
 ## 常见问题
 
 ### 1.flutter pub get慢  

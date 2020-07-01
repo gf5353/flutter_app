@@ -31,3 +31,13 @@ FLUTTER_STORAGE_BASE_URL ===== https://storage.flutter-io.cn
 执行一下 flutter doctor命令
 
 http://jimbray.xyz/post/using-flutter-in-china/
+
+
+
+2.Json解析错误 Unhandled Exception: FormatException: Unexpected character (at character 2) 
+
+主要原因dio网络请求的时候返回的数据格式是非json格式，需要修改
+```
+responseType: ResponseType.plain
+```
+

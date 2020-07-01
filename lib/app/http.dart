@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -18,7 +19,8 @@ class HttpView extends State<HttpWidget> {
   Future<String> doGet() async {
     Response rsp;
     rsp = await dio.get(
-        "http://api.map.baidu.com/telematics/v3/weather?location=%E5%98%89%E5%85%B4&output=json&ak=5slgyqGDENN7Sy7pw29IUvrZ");
+        "http://api.map.baidu.com/telematics/v3/weather?location=%E5%98%89%E5%85%B4&output=json&ak=5slgyqGDENN7Sy7pw29IUvrZ"
+    ,options: Options(responseType: ResponseType.plain));
     print(rsp.data.toString());
 
     return rsp.data.toString();
@@ -31,7 +33,8 @@ class HttpView extends State<HttpWidget> {
           child: Text('普通get请求'),
           onPressed: () {
             doGet().then((data) {
-              Fluttertoast.showToast(msg: data);
+                Map<String, dynamic> jsonMap = json.decode(data);
+              Fluttertoast.showToast(msg: jsonMap["message"]);
             }).catchError((error) {
               Fluttertoast.showToast(msg: '请求异常'+error.toString());
             });

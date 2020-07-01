@@ -41,3 +41,24 @@ http://jimbray.xyz/post/using-flutter-in-china/
 responseType: ResponseType.plain
 ```
 
+
+
+3.Webview 在ios平台下无法显示（引用原生view无法显示）
+
+报错信息
+
+Trying to embed a platform view but the PrerollContext does not support embedding 
+
+解决方法：增加info.plist文件中的健值对
+
+
+
+```
+<key>io.flutter.embedded_views_preview</key>
+<true/>
+<key>NSAppTransportSecurity</key>
+<dict>
+   <key>NSAllowsArbitraryLoads</key>
+   <true/>
+</dict>
+```

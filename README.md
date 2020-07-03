@@ -52,7 +52,6 @@ Trying to embed a platform view but the PrerollContext does not support embeddin
 解决方法：增加info.plist文件中的健值对
 
 
-
 ```
 <key>io.flutter.embedded_views_preview</key>
 <true/>
@@ -62,3 +61,10 @@ Trying to embed a platform view but the PrerollContext does not support embeddin
    <true/>
 </dict>
 ```
+
+4.创建插件制定开发语言
+```
+flutter create -i objc -a java flutter_android_new
+```
+
+https://dart.dev/tools/pub/dependencies#sdk

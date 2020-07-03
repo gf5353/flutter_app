@@ -17,11 +17,12 @@ class HttpView extends State<HttpWidget> {
   Dio dio = Dio();
 
   Future<String> doGet() async {
+    dio.interceptors.add(LogInterceptor(responseBody: false)); //开启请求日志
+
     Response rsp;
     rsp = await dio.get(
         "http://api.map.baidu.com/telematics/v3/weather?location=%E5%98%89%E5%85%B4&output=json&ak=5slgyqGDENN7Sy7pw29IUvrZ"
     ,options: Options(responseType: ResponseType.plain));
-    print(rsp.data.toString());
 
     return rsp.data.toString();
   }

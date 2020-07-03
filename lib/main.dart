@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app/dialog.dart';
 import 'package:flutter_app/app/html.dart';
+import 'package:flutter_app/app/packages.dart';
 import 'app/home.dart';
 import 'app/widgets.dart';
 import 'app/http.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
           '/widgets': (context) => MyWidget(),
           '/dialog': (context) => DialogWidget(),
           '/http': (context) => HttpWidget(),
-          '/html':(context)=>HtmlWidget()
+          '/html':(context)=>HtmlWidget(),
+          '/packages':(context)=>PackageWidget()
         });
   }
 }

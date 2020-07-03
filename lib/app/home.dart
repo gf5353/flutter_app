@@ -44,7 +44,7 @@ class HomeView extends State<HomeWidget> {
   }
 
   Widget _buildSuggestions() {
-    List<String> list = ['Widgets使用示例', '对话框使用示例', 'http使用示例', 'html使用示例'];
+    List<String> list = ['Widgets使用示例', '对话框使用示例', 'http使用示例', 'html使用示例','packages及平台特定代码实现'];
 
     return ListView.builder(itemBuilder: (context, i) {
       return i < list.length
@@ -66,6 +66,10 @@ class HomeView extends State<HomeWidget> {
                     break;
                   case 3:
                     Navigator.pushNamed(context, '/html',
+                        arguments: {'title': list[i]});
+                    break;
+                  case 4:
+                    Navigator.pushNamed(context, '/packages',
                         arguments: {'title': list[i]});
                     break;
                   default:
